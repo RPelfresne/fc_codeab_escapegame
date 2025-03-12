@@ -1,5 +1,18 @@
-function vérifClé () {
+input.onButtonPressed(Button.A, function () {
+    codeJoueur = "" + codeJoueur + "A"
+    basic.showString("A")
+    verifcle()
+    basic.clearScreen()
+})
+input.onButtonPressed(Button.B, function () {
+    codeJoueur = "" + codeJoueur + "B"
+    basic.showString("B")
+    verifcle()
+    basic.clearScreen()
+})
+function verifcle () {
     if (codeJoueur == codeAB) {
+        basic.clearScreen()
         basic.showString(motSecret)
         control.reset()
     } else if (codeJoueur.length > codeAB.length) {
@@ -9,20 +22,10 @@ function vérifClé () {
         control.reset()
     }
 }
-input.onButtonPressed(Button.A, function () {
-    codeJoueur = "" + codeJoueur + "A"
-    basic.showString("A")
-    vérifClé()
-})
-input.onButtonPressed(Button.B, function () {
-    codeJoueur = "" + codeJoueur + "B"
-    basic.showString("B")
-    vérifClé()
-})
 let codeJoueur = ""
 let codeAB = ""
 let motSecret = ""
-motSecret = "4628"
+motSecret = "KARASU81271"
 codeAB = "BABAAB"
 codeJoueur = ""
 basic.showLeds(`
